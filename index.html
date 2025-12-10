@@ -6,7 +6,7 @@
   <title>My Video Collection</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Simple collapsible styling */
+    /* Collapsible button styling */
     .collapsible {
       background-color: #eee;
       color: #444;
@@ -101,20 +101,21 @@
         <p>#28</p>
       </div> <!-- end content -->
     </div> <!-- end category -->
+
   </div> <!-- end main-content -->
 
   <!-- SCRIPT -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // HIDE MAIN CONTENT UNTIL LOGIN
+      // Hide main content until login
       document.getElementById("main-content").style.display = "none";
 
-      // COLLAPSIBLE FUNCTIONALITY
-      var coll = document.getElementsByClassName("collapsible");
+      // Collapsible button functionality
+      const coll = document.getElementsByClassName("collapsible");
       for (let i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function () {
           this.classList.toggle("active");
-          var content = this.nextElementSibling;
+          const content = this.nextElementSibling;
           if (content.style.display === "block") {
             content.style.display = "none";
           } else {
@@ -139,5 +140,6 @@
       }
     }
   </script>
+
 </body>
 </html>
