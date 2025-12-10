@@ -5,8 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Video Collection</title>
   <link rel="stylesheet" href="style.css">
-</head>
+  <style>
+    /* Simple collapsible styling */
+    .collapsible {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 16px;
+    }
 
+    .active, .collapsible:hover {
+      background-color: #ccc;
+    }
+
+    .content {
+      display: none;
+      overflow: hidden;
+      padding: 10px 0;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
 <body>
 
   <!-- LOGIN BOX -->
@@ -18,18 +42,14 @@
     <p id="error" style="color: red;"></p>
   </div>
 
-  <!-- MAIN CONTENT (HIDDEN UNTIL LOGIN) -->
+  <!-- MAIN CONTENT -->
   <div id="main-content">
-
     <h1>My Video Collection</h1>
 
-    <!-- Ace Attorney -->
+    <!-- Ace Attorney Collapsible -->
     <div class="category">
       <button class="collapsible">Ace Attorney (10 videos)</button>
       <div class="content">
-       <!- - videos here - ->
-      </div>
-    </div>
         <video controls width="320">
           <source src="https://www.dropbox.com/scl/fi/bkkau51msx8d48ond8eiz/19.mp4.mp4?rlkey=72fgelm5sw1pp4hfh5khj1600&st=i6i8zr4k&raw=1" type="video/mp4">
         </video>
@@ -79,16 +99,29 @@
           <source src="https://www.dropbox.com/scl/fi/bsaokkywngu2hvtuxh3hc/28.mp4.mp4?rlkey=x33r2jmsxfbn2qj8g8s13prww&st=7wpfqv42&raw=1" type="video/mp4">
         </video>
         <p>#28</p>
-
       </div> <!-- end content -->
     </div> <!-- end category -->
-
   </div> <!-- end main-content -->
 
-  <!-- LOGIN SCRIPT -->
+  <!-- SCRIPT -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // HIDE MAIN CONTENT UNTIL LOGIN
       document.getElementById("main-content").style.display = "none";
+
+      // COLLAPSIBLE FUNCTIONALITY
+      var coll = document.getElementsByClassName("collapsible");
+      for (let i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
     });
 
     function checkLogin() {
@@ -106,6 +139,5 @@
       }
     }
   </script>
-
 </body>
 </html>
