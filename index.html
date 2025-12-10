@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Video Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOGIN BOX -->
+  <div id="login-box" style="text-align:center; padding-top: 100px;">
+    <h2>Login</h2>
+    <input id="username" type="text" placeholder="Username"><br><br>
+    <input id="password" type="password" placeholder="Password"><br><br>
+    <button onclick="checkLogin()">Login</button>
+    <p id="error" style="color: red;"></p>
+  </div>
+
+  <!-- MAIN CONTENT (HIDDEN UNTIL LOGIN) -->
+  <div id="main-content">
+
+    <h1>My Video Collection</h1>
+
+    <!-- Ace Attorney -->
+    <div class="category">
+      <button class="collapsible">Ace Attorney (10 videos)</button>
+      <div class="content">
+
+        <video controls width="320">
+          <source src="https://www.dropbox.com/scl/fi/bkkau51msx8d48ond8eiz/19.mp4.mp4?rlkey=72fgelm5sw1pp4hfh5khj1600&st=i6i8zr4k&raw=1" type="video/mp4">
+        </video>
+        <p>#19</p>
+
+        <video controls width="320">
+          <source src="https://www.dropbox.com/scl/fi/nt5o06kwygujv4dz9nov3/20.mp4.mp4?rlkey=3tupawwi6vk37bizw7ll2mv1c&st=pzlj5w1u&raw=1" type="video/mp4">
+        </video>
+        <p>#20</p>
+
+        <video controls width="320">
+          <source src="https://www.dropbox.com/scl/fi/kdwvgojeoccevftq0lvm9/21.mp4.mp4?rlkey=ocjo2xf3zffv00nm92smdhcgn&st=invb7y8c&raw=1" type="video/mp4">
+        </video>
+        <p>#21</p>
+
+        <video controls width="320">
+          <source src="https://www.dropbox.com/scl/fi/5bz8xroysloyqhi29tz4o/22.mp4.mp4?rlkey=j02vqfx07gysnn4v269isxis6&st=l6nhpavk&raw=1" type="video/mp4">
+        </video>
+        <p>#22</p>
+
+        <video controls width="320">
+          <source src="https://www.dropbox.com/scl/fi/axbqn9ji323d7ximqb1dg/23-Forgotten-Turnabout.mp4.mp4?rlkey=78f4qh6b66tnt43jfxhms7ntv&st=yhb1addd&raw=1" type="video/mp4">
+        </video>
+        <p>#23 - Forgotten Turnabout</p>
+
+        <video controls width="320">
+          <source src="https://www.dropbox.com/scl/fi/q6hmwra1uzaj0hynwa0av/24.mp4.mp4?rlkey=0fia9mk8sruz4cl2f7otizqew&st=29ovqbyu&raw=1" type="video/mp4">
+        </video>
+        <p>#24</p>
+
+        <video controls width="320">
+          <source src="https://www.dropbox.com/scl/fi/mf2ia5ovbv35y9scqa1mp/25.mp4.mp4?rlkey=cjywwg9af5bckl0nsho2oossp&st=oeztidso&raw=1" type="video/mp4">
+        </video>
+        <p>#25</p>
+
+        <video controls width="320">
+          <source src="https://www.dropbox.com/scl/fi/owq722s4gb2vzkm3l9eti/26.mp4.mp4?rlkey=nuw0jdkg3f000v0226h59mjjq&st=ojvalb98&raw=1" type="video/mp4">
+        </video>
+        <p>#26</p>
+
+        <video controls width="320">
+          <source src="https://www.dropbox.com/scl/fi/7quxw7p077lu1xyvpgfot/27.mp4.mp4?rlkey=ez5ytvf8l28gupmbs4tvogpq5&st=lozu0pfq&raw=1" type="video/mp4">
+        </video>
+        <p>#27</p>
+
+        <video controls width="320">
+          <source src="https://www.dropbox.com/scl/fi/bsaokkywngu2hvtuxh3hc/28.mp4.mp4?rlkey=x33r2jmsxfbn2qj8g8s13prww&st=7wpfqv42&raw=1" type="video/mp4">
+        </video>
+        <p>#28</p>
+
+      </div> <!-- end content -->
+    </div> <!-- end category -->
+
+  </div> <!-- end main-content -->
+
+  <!-- LOGIN SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("main-content").style.display = "none";
+    });
+
+    function checkLogin() {
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+
+      const correctUser = "Kay Faraday";
+      const correctPass = "Sebastian Debeste";
+
+      if (user === correctUser && pass === correctPass) {
+        document.getElementById("login-box").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      } else {
+        document.getElementById("error").textContent = "Incorrect username or password.";
+      }
+    }
+  </script>
+
+</body>
+</html>
