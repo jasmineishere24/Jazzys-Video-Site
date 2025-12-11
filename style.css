@@ -1,3 +1,7 @@
+/* ===========================
+   BACKUP STYLE: ORIGINAL OLD SITE
+   =========================== */
+
 /* Basic page styling */
 body {
   font-family: Arial, sans-serif;
@@ -37,7 +41,8 @@ h1 {
   border-radius: 5px;
 }
 
-.collapsible.active, .collapsible:hover {
+.collapsible.active,
+.collapsible:hover {
   background-color: #555;
 }
 
